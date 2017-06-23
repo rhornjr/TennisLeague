@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Tennis">
+  <DataContextMoniker Name="/TennisDataContext" />
+  <nestedChildShapes>
+    <classShape Id="12418743-d90d-4b58-a440-c3584f8eecf0" absoluteBounds="4.375, 4.25, 2, 1.9631982421875">
+      <DataClassMoniker Name="/TennisDataContext/Match" />
+      <nestedChildShapes>
+        <elementListCompartment Id="33680f05-62c1-40f8-8bf5-3ee2b3a58d2b" absoluteBounds="4.3900000000000006, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="13101ad4-e648-431c-9421-a579be446021" absoluteBounds="1.125, 3.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/TennisDataContext/Season" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3fc1b63a-c335-4b7d-89fc-7f122ec6f12b" absoluteBounds="1.1400000000000006, 3.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0f4b81d1-db67-42c8-8fb4-2d1f313e6941" absoluteBounds="4.375, 1.5, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/TennisDataContext/MatchSet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99e7733f-76d8-401e-8628-89dcd4df75b7" absoluteBounds="4.3900000000000006, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6af3f1ee-6769-42eb-8ad6-cd183bebb383" absoluteBounds="1.125, 6.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/TennisDataContext/Division" />
+      <nestedChildShapes>
+        <elementListCompartment Id="92df6b76-beb2-49f9-a04e-46d25d753bfc" absoluteBounds="1.1400000000000006, 6.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="68886aa3-06e2-4bbc-8bec-81894e7a9c74" absoluteBounds="7.5, 6.625, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/TennisDataContext/DivisionPlayer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="946ad780-c2db-427d-96ee-91aa83b1fba8" absoluteBounds="7.5150000000000006, 7.0850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1e92abdf-be1f-420c-9372-a10d4fe8ee63" absoluteBounds="1.125, 1.125, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/TennisDataContext/League" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed455e6a-65f8-492b-92e0-b1452a85bc82" absoluteBounds="1.1400000000000006, 1.5850000000000009, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 4.25); (5.375 : 3.27089680989583)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TennisDataContext/Match/Match_MatchSet" />
+      <nodes>
+        <classShapeMoniker Id="12418743-d90d-4b58-a440-c3584f8eecf0" />
+        <classShapeMoniker Id="0f4b81d1-db67-42c8-8fb4-2d1f313e6941" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 7.19314697265625); (5.375 : 7.19314697265625); (5.375 : 6.2131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TennisDataContext/Division/Division_Match" />
+      <nodes>
+        <classShapeMoniker Id="6af3f1ee-6769-42eb-8ad6-cd183bebb383" />
+        <classShapeMoniker Id="12418743-d90d-4b58-a440-c3584f8eecf0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 4.7612939453125); (2.125 : 6.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TennisDataContext/Season/Season_Division" />
+      <nodes>
+        <classShapeMoniker Id="13101ad4-e648-431c-9421-a579be446021" />
+        <classShapeMoniker Id="6af3f1ee-6769-42eb-8ad6-cd183bebb383" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.125 : 7.60222045898437); (7.5 : 7.60222045898437)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TennisDataContext/Division/Division_DivisionPlayer" />
+      <nodes>
+        <classShapeMoniker Id="6af3f1ee-6769-42eb-8ad6-cd183bebb383" />
+        <classShapeMoniker Id="68886aa3-06e2-4bbc-8bec-81894e7a9c74" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.125 : 2.5112939453125); (2.125 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TennisDataContext/League/League_Season" />
+      <nodes>
+        <classShapeMoniker Id="1e92abdf-be1f-420c-9372-a10d4fe8ee63" />
+        <classShapeMoniker Id="13101ad4-e648-431c-9421-a579be446021" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="dea6f383-1e04-4f68-9e2f-bfbc050f2df9" absoluteBounds="7.5, 4.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/TennisDataContext/Player" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39dc1e99-65e2-46bb-9369-8fd958aab9be" absoluteBounds="7.5150000000000006, 4.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.5 : 5.07294840494792); (6.375 : 5.07294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TennisDataContext/Player/Player_Match" />
+      <nodes>
+        <classShapeMoniker Id="dea6f383-1e04-4f68-9e2f-bfbc050f2df9" />
+        <classShapeMoniker Id="12418743-d90d-4b58-a440-c3584f8eecf0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.5 : 4.59897420247396); (6.375 : 4.59897420247396)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TennisDataContext/Player/Player_Match1" />
+      <nodes>
+        <classShapeMoniker Id="dea6f383-1e04-4f68-9e2f-bfbc050f2df9" />
+        <classShapeMoniker Id="12418743-d90d-4b58-a440-c3584f8eecf0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 5.89589680989583); (8.5 : 6.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TennisDataContext/Player/Player_DivisionPlayer" />
+      <nodes>
+        <classShapeMoniker Id="dea6f383-1e04-4f68-9e2f-bfbc050f2df9" />
+        <classShapeMoniker Id="68886aa3-06e2-4bbc-8bec-81894e7a9c74" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

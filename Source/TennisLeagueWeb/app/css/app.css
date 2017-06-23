@@ -1,0 +1,494 @@
+﻿/* app css stylesheet */
+
+html, body {
+    height: 100%;
+    /*background-color:#9FBEB9;*/
+    background-image: url('../images/tennisBallAndCourt.JPG');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h2.myHeader {
+    border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #ccc;
+    color: #fff;
+    margin: 2px;
+    text-shadow: #9FBEB9 1px 1px 1px;
+    text-align: center;
+}
+
+h2.myFooter {
+    padding-left: 10px;
+    height: 30px;
+    font-size:larger;
+}
+
+.mainHeader { background-color: #0B5586; }
+.subHeader { background-color: #4494C9; }
+
+.columnHeader {
+    font-weight:bold;
+}
+
+.angularContainer {
+    background-color:rgba(255, 255, 255,0.9);
+    border-radius: 5px;
+}
+
+.columnHeader {
+    font-weight:bold;
+}
+
+/* This is here so angular ui-grids only show scrollbars when necessary. http://stackoverflow.com/a/35847744/279516 */
+.ui-grid .ui-grid-render-container-body .ui-grid-viewport {
+  overflow-x: auto !important;
+  overflow-y: auto !important;
+}
+
+/* Center grid contents vertically and horizontally */
+.grid-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* horizontal part */
+}
+
+.evenRowBackground {
+    /* Same as angularContainer */
+    background-color:rgba(255, 255, 255,0.9);
+    border-radius: 5px;
+}
+
+.box, .movingBox {
+    background-color:tan;
+    height:150px;
+    width:200px;
+    border:1px solid;
+}
+
+.movingBox {
+    position:absolute;
+    top:250px;
+    left:100px;
+    transition: left 1800ms linear;
+}
+
+.thinBorder {
+    height: 550px;
+    margin:0px auto;
+    border:1px solid #fff;
+    padding:10px;
+}
+
+.active {
+    font-size: 24px;
+}
+
+#admin-keys {
+    width: 90%;
+}
+
+.verticallyCentered {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.customLabelStandalone, .customLabelLeft, .customLabelRight, .customLabelMiniHeader {
+    border-bottom: 1px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #ccc;
+    font-size: 1em;
+    padding: 0.3em 1em;
+}
+
+.customLabelStandalone { color: white; background-color: #0B5586; width:95%; }
+.customLabelLeft { color: white; background-color: #4494C9; text-align: right; }
+.customLabelMiniHeader { color: white; background-color: #4494C9; text-align: left; width:300px; font-size:18px; font-weight:bold; }
+.customLabelRight { color: white; background-color: #4f8149; text-align: left; font-weight: bold; width:100%; white-space:normal; }
+
+.clickable {
+    cursor: pointer;
+}
+
+.userMessage, .seperator {
+    background-color: #7a5a5a;
+    font-size: 1.0em !important;
+    text-align: left !important;
+    text-shadow: none !important;
+}
+
+.seperator { background-color: #4494C9 }
+
+div.OneOfOne { height:550px; overflow:auto }
+div.OneOfTwo { height:300px; overflow:auto }
+div.TwoOfTwo { height:250px; overflow:auto }
+div.PageContainer { width:100%; }
+
+.gridLessThanHalf {
+    margin: 0 auto; /* So the grid is centered */
+    border: 1px solid rgb(212,212,212);
+    width: 890px; 
+    height: 240px;
+}
+
+.gridHalf {
+    margin: 0 auto; /* So the grid is centered */
+    border: 1px solid rgb(212,212,212);
+    width: 890px; 
+    height: 290px;
+}
+
+.gridFull {
+    margin: 0 auto; /* So the grid is centered */
+    border: 1px solid rgb(212,212,212);
+    width: 100%;
+    height: 400px;
+}
+
+.gridFullThin {
+    border: 1px solid rgb(212,212,212);
+    width: 440px; 
+    height: 500px;
+}
+
+.gridFullWidthAuto {
+    border: 1px solid rgb(212,212,212);
+    width: 100%;
+}
+
+.gridFullThinner {
+    border: 1px solid rgb(212,212,212);
+    width: 320px; 
+    height: 500px;
+}
+
+.waitImage, .waitImageThin {
+    height:54px;
+    width:54px;
+    margin:0px auto;
+}
+
+.waitImageThin { left:200px; }
+
+.fill { 
+    min-height: 100%;
+    height: 100%;
+}
+
+.module-display {
+    width:100%;
+    padding-bottom: 25%;
+    text-align: center;
+}
+
+.miniIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.tinyIcon {
+    width: 20px;
+    height: 20px;
+}
+
+.solarPanelBase, .solarPanelEmpty, .solarPanelScanned, .solarPanelNext {
+    border-radius: 25px; /* for rounded corners */
+    border-color: #000000;
+    display: inline-block; /* so the text can be aligned vertically */
+    align-items: center;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+    width: 100%;
+}
+
+.solarPanelEmpty {
+    border: dashed;
+    border-color: #000000;
+}
+
+.solarPanelScanned {
+    border: solid;
+    border-color: #000000;
+    background-color: #4494C9;    
+}
+
+.solarPanelNext {
+    border: dashed;
+    border-color: #000000;
+    background-color: #319c3f;
+}
+
+.unloadedPallet {
+    color: #000;
+}
+
+.loadedPallet {
+    background-color: #fff;    
+    color: #000;
+}
+
+.moduleInstructions {
+    font-size: 22px;
+    color: #fff;
+}
+
+.row-right-padding {
+    padding-right: 5px;
+}
+
+.row-left-padding {
+    padding-left: 5px;
+}
+
+.horizontalCassette {
+    border-radius: 3px; /* for rounded corners */
+    border: 1px dotted #000000;
+    background-color: #000;
+    text-align: center;
+    color: #ffffff;
+    margin:2px;
+    padding-right: 3px;
+}
+
+.selectedCassette {
+    border: solid;
+    border-color: black;
+    background-color: #F0F5F5;
+    color: black;
+}
+
+.cassette-display {
+    display:inline-block;
+}
+
+.red {
+    color: red; 
+}
+
+.black {
+    color: black;
+}
+
+.ng-slider {
+  background-color: lightblue;
+  border-color: black;
+  border-width: thin;
+  width: 10em;
+  height: 2em;
+  line-height: 2em;  /* This causes the text to be centered vertically. */
+  position: absolute;
+  text-align: center;
+  font-size: small;
+  
+  /* Add vendor prefixes as needed */
+  transition: top 800ms linear, left 800ms linear;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+/* ui-grid draggable styling */
+
+.ui-grid-draggable-row {
+    height: 30px;
+}
+
+.ui-grid-draggable-row-over {
+    position: relative;
+    color: #AAA;
+}
+
+.ui-grid-draggable-row-over:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px dashed #AAA;
+}
+
+.ui-grid-draggable-row-over--above:before {
+    top: 0;
+}
+
+.ui-grid-draggable-row-over--below:before {
+    bottom: 0;
+}
+
+.app-modal-window .modal-dialog {
+  width: 500px;
+}
+
+#headerTopics {
+    white-space:nowrap;
+}
+
+/* Make the text on the nav tabs white */
+.nav-tabs > li > a {
+    color:#000 !important;
+}
+
+.nav-tabs > li.active > a {
+    color:#0B5586 !important;
+}
+
+.navBar {
+    margin-top:30px;
+    margin-right:30px
+}
+
+.navBar li {
+    display: inline;
+}
+
+.navBar li  a {
+    list-style: none;    
+    width: 115px;
+    height: 25px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: black;
+    font-weight: bold;
+    border-color: black;
+    border-style: groove;
+    border-width: thin; 
+    background: #d4d4d4;
+    text-decoration: none;  /* We don't want the underlines in the navbar link buttons */
+    font-size: 1.8vw;
+}  
+
+.navBar a:hover {
+    background: #F0F5F5;
+}
+
+.navBar a.active {
+    background: white;
+}
+
+.fs-logo {
+    margin-left:20px;
+}
+
+.series-3-image {
+    margin:5px;
+    width:120px;
+    height:68px;
+}
+
+.mma-title {
+    font-size: 84px;
+    font-family:Calibri;
+    display:inline;
+}
+
+.xs-text-center-left {
+    text-align: center;
+}
+
+.xs-text-center-right {
+    text-align: center;
+}
+
+.container {
+    width: 100%
+}
+
+.responsive-text {
+    font-size: 2vw;
+}
+
+@media all and (min-width: 768px) { /* screen size above 768px */
+    .solarPanelBase, .solarPanelEmpty, .solarPanelScanned, .solarPanelNext {
+        height: 250px;
+    }
+
+    .customLabelLeft, .customLabelRight {
+        font-size: 10px;
+    }
+
+    .cassetteWrapper {
+        max-height: 250px;
+    }
+
+    .xs-text-center-left {
+        text-align: left;
+    }
+
+    .xs-text-center-right {
+        text-align: right;
+    }
+}
+
+@media all and (min-width: 992px) { /* screen size above 992px */
+    .solarPanelBase, .solarPanelEmpty, .solarPanelScanned, .solarPanelNext {
+        height: 300px;
+    }
+
+    .customLabelLeft, .customLabelRight {
+        font-size: 12px;
+    }
+
+    .cassetteWrapper {
+        max-height: 300px;
+    }
+}
+
+@media all and (min-width: 1200px) { /* screen size above 1200px */
+    .solarPanelBase, .solarPanelEmpty, .solarPanelScanned, .solarPanelNext {
+        height: 325px;
+    }
+    
+    .customLabelLeft, .customLabelRight {
+        font-size: 14px;
+    }
+
+    .cassetteWrapper {
+        max-height: 325px;
+    }
+}
+
+@media all and (min-width: 1440px) { /* screen size above 1440px */
+    .solarPanelBase, .solarPanelEmpty, .solarPanelScanned, .solarPanelNext {
+        height: 450px;
+    }
+
+    .customLabelLeft, .customLabelRight {
+        font-size: 18px;
+    }
+
+    .cassetteWrapper {
+        max-height: 450px;
+    }
+}

@@ -1,0 +1,14 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Select a Season</h3>
+</div>
+<div class="modal-body" style="font-size: medium;">
+    <div ng-repeat="season in seasons track by $index">
+        <div class="row" data-ng-class="{ evenRowBackground: $index % 2 == 0 }">
+            <a href="" ng-click="setSeason(season);">{{season.Name}}</a>            
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-primary" ng-click="cancel()">Cancel</button>
+</div>

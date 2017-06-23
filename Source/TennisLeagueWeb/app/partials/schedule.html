@@ -1,0 +1,28 @@
+﻿<img id="waitImage" src="images/wait.gif" ng-show="loading" class="waitImage" style="position:absolute; top:10%; left:48%;" />
+<div class="container" style="overflow-y:scroll; height:98%;">
+    <div class="row">
+        <div class="col-xs-12 customLabelStandalone" style="margin-left:20px;">
+            <span ng-click="goToDivision(1);" class="clickable" ng-class="{active: state.selectedDivision == 1}">East</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span ng-click="goToDivision(2);" class="clickable" ng-class="{active: state.selectedDivision == 2}">West</span>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-1 text-center columnHeader">Wk</div>
+        <div class="col-xs-2 columnHeader">Away</div>
+        <div class="col-xs-2 columnHeader">Home</div>
+        <div class="col-xs-2 columnHeader">Winner</div>
+        <div class="col-xs-4 columnHeader">Score</div>
+    </div>
+    <div ng-repeat="match in state.selectedSchedule.Matches">
+        <hr ng-if="$index % 5 == 0" style="border-color:black;" />
+        <div class="row" data-ng-class="{ evenRowBackground: $index % 2 == 0 }">
+            <div class="col-xs-1 text-center">{{match.WeekNumber}}</div>
+            <div class="col-xs-2" style="overflow:hidden;">{{match.AwayPlayer}}</div>
+            <div class="col-xs-2" style="overflow:hidden;">{{match.HomePlayer}}</div>
+            <div class="col-xs-2" style="overflow:hidden;">{{match.Winner}}</div>
+            <div class="col-xs-4">{{match.Score}}</div>
+        </div>        
+    </div>
+</div>

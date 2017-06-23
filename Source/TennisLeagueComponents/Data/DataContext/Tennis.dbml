@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Tennis" Class="TennisDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=bzl5b9zc8k.database.windows.net;Initial Catalog=Tennis;Persist Security Info=True;User ID=rhorn" SettingsObjectName="TennisLeagueComponents.Properties.Settings" SettingsPropertyName="TennisConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Play.Match" Member="Matches">
+    <Type Name="Match">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HomePlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AwayPlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WeekNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DivisionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MatchDate" Type="DateTime?" DbType="DateTime2 NULL" CanBeNull="false" />
+      <Association Name="Match_MatchSet" Member="MatchSets" ThisKey="Id" OtherKey="MatchId" Type="MatchSet" />
+      <Association Name="Division_Match" Member="Division" ThisKey="DivisionId" OtherKey="Id" Type="Division" IsForeignKey="true" />
+      <Association Name="Player_Match" Member="Player" ThisKey="HomePlayerId" OtherKey="Id" Type="Player" IsForeignKey="true" />
+      <Association Name="Player_Match1" Member="Player1" ThisKey="AwayPlayerId" OtherKey="Id" Type="Player" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Structure.Season" Member="Seasons">
+    <Type Name="Season">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LeagueId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Season_Division" Member="Divisions" ThisKey="Id" OtherKey="SeasonId" Type="Division" />
+      <Association Name="League_Season" Member="League" ThisKey="LeagueId" OtherKey="Id" Type="League" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Play.MatchSet" Member="MatchSets">
+    <Type Name="MatchSet">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MatchId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SetNumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="HomeGamesWon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AwayGamesWon" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Match_MatchSet" Member="Match" ThisKey="MatchId" OtherKey="Id" Type="Match" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Structure.Division" Member="Divisions">
+    <Type Name="Division">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SeasonId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Division_Match" Member="Matches" ThisKey="Id" OtherKey="DivisionId" Type="Match" />
+      <Association Name="Division_DivisionPlayer" Member="DivisionPlayers" ThisKey="Id" OtherKey="DivisionId" Type="DivisionPlayer" />
+      <Association Name="Season_Division" Member="Season" ThisKey="SeasonId" OtherKey="Id" Type="Season" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Structure.DivisionPlayer" Member="DivisionPlayers">
+    <Type Name="DivisionPlayer">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DivisionId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Division_DivisionPlayer" Member="Division" ThisKey="DivisionId" OtherKey="Id" Type="Division" IsForeignKey="true" />
+      <Association Name="Player_DivisionPlayer" Member="Player" ThisKey="PlayerId" OtherKey="Id" Type="Player" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Structure.League" Member="Leagues">
+    <Type Name="League">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="OwnerPlayerId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="League_Season" Member="Seasons" ThisKey="Id" OtherKey="LeagueId" Type="Season" />
+    </Type>
+  </Table>
+  <Table Name="Structure.Player" Member="Players">
+    <Type Name="Player">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EmailAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CellPhone" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Player_Match" Member="Matches" ThisKey="Id" OtherKey="HomePlayerId" Type="Match" />
+      <Association Name="Player_Match1" Member="Matches1" ThisKey="Id" OtherKey="AwayPlayerId" Type="Match" />
+      <Association Name="Player_DivisionPlayer" Member="DivisionPlayers" ThisKey="Id" OtherKey="PlayerId" Type="DivisionPlayer" />
+    </Type>
+  </Table>
+</Database>

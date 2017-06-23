@@ -1,0 +1,25 @@
+﻿<img id="waitImage" src="images/wait.gif" ng-show="loading" class="waitImage" style="position:absolute; top:15%; left:48%;" />
+<div class="container">
+    <br />
+    <div class="row">
+        <div class="col-xs-2"><b>Cell Phone:</b>&nbsp;&nbsp;{{state.player.CellPhone}}</div>
+    </div>
+    <div class="row">
+        <div class="col-xs-2"><b>Email Address:</b>&nbsp;&nbsp;{{state.player.EmailAddress}}</div>
+    </div>    
+    <br />
+    <div class="row">
+        <div class="col-xs-2 text-center columnHeader">Week</div>
+        <div class="col-xs-2 columnHeader">W/L</div>
+        <div class="col-xs-4 columnHeader">Opponent</div>
+        <div class="col-xs-4 columnHeader">Score</div>
+    </div>
+    <div ng-repeat="match in schedule">
+        <div class="row" data-ng-class="{ evenRowBackground: $index % 2 == 0 }">
+            <div class="col-xs-2 text-center">{{match.weekNumber}}</div>
+            <div class="col-xs-2" style="overflow:hidden;">{{match.winLoss}}</div>
+            <div class="col-xs-4" style="overflow:hidden;">{{match.opponent}}</div>
+            <div class="col-xs-4">{{match.score}}</div>
+        </div>
+    </div>
+</div>

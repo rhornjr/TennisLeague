@@ -1,0 +1,26 @@
+﻿<img id="waitImage" src="images/wait.gif" ng-show="loading" class="waitImage" style="position:absolute; top:10%; left:48%;" />
+<div id="pageContainer" class="container">
+    <div class="row">
+        <div class="col-xs-12 customLabelStandalone" style="margin-left:20px;">            
+            <span ng-click="goToDivision(1);" class="clickable" ng-class="{active: state.selectedDivision == 1}">East</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span ng-click="goToDivision(2);" class="clickable" ng-class="{active: state.selectedDivision == 2}">West</span>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-4 columnHeader">Player</div>
+        <div class="col-xs-3 text-center columnHeader">Matches</div>
+        <div class="col-xs-2 text-center columnHeader">Sets</div>
+        <div class="col-xs-3 text-center columnHeader">Games</div>
+    </div>
+    <hr style="border-color:black;"/>
+    <div ng-repeat="standing in state.selectedStandings">
+        <div class="row" data-ng-class="{ evenRowBackground: $index % 2 == 0 }">
+            <div class="col-xs-4" style="text-overflow:clip;"><a href="" ng-click="goToPlayer(standing)">{{standing.PlayerName}}</a></div>
+            <div class="col-xs-3 text-center">{{standing.MatchesWon}} - {{standing.MatchesLost}}</div>
+            <div class="col-xs-2 text-center">{{standing.SetsWon}} - {{standing.SetsLost}}</div>
+            <div class="col-xs-3 text-center">{{standing.GamesWon}} - {{standing.GamesLost}}</div>
+        </div>
+    </div>
+</div>
